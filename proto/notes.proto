@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package notes;
+
+service NoteService {
+    rpc AddNote (NoteRequest) returns (NoteResponse);
+    rpc ListNotes (Empty) returns (ListNotesResponse); // Mengembalikan array NoteResponse
+}
+
+message NoteRequest {
+    string text = 1;
+}
+
+message NoteResponse {
+    string id = 1;
+    string text = 2;
+}
+
+message Empty {}
+
+// Array NoteResponse untuk respons ListNotes
+message ListNotesResponse {
+    repeated NoteResponse notes = 1; // repeated digunakan untuk array
+}

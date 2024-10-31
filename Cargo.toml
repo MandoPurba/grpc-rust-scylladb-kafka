@@ -1,0 +1,23 @@
+[package]
+name = "rust_scylla_grpc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.91"
+async-trait = "0.1.83"
+chrono = { version = "0.4.38", features = ["serde"] }
+dotenv = "0.15.0"
+futures = "0.3.31"
+prost = "0.13.3"
+rdkafka = { version = "0.36.2", features = ["cmake-build"] }
+scylla = "0.14.0"
+serde = { version = "1.0.214", features = ["derive"] }
+serde_json = "1.0.132"
+tokio = { version = "1.41.0", features = ["full"] }
+tonic = "0.12.3"
+tonic-reflection = "0.12.3"
+uuid = { version = "1.11.0", features = ["serde", "v4"] }
+
+[build-dependencies]
+tonic-build = "0.12.3"
